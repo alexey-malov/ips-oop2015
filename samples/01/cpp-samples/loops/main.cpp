@@ -1,12 +1,10 @@
 ﻿#include <iostream>
 #include <algorithm>
 #include <string>
+#include <map>
 #include <random>
 
-using std::cout;
-using std::cin;
-using std::endl;
-using std::string;
+using namespace std;
 
 void main()
 {
@@ -47,6 +45,52 @@ void main()
 		cout << endl;
 	}
 
+	// Range-based цикл for
+	{
+		// Обход элементов массива
+		{
+			int numbers[] = { 10, 15, 17, 33, 18 };
+			int sum = 0;
+			int product = 1;
+			cout << "Array items: ";
+			for (int number : numbers)
+			{
+				cout << number << ", ";
+				sum += number;
+				product *= number;
+			}
+			cout << endl << "\tSum: " << sum << endl << "\tProduct: " << product << endl;
+		}
+
+		// Обход символов строки и контейнера map
+		{
+			string pangram = "the quick brown fox jumps over the lazy dog";
+
+			// Отображение (map) - контейнер, хранящий пары ключ-значение
+			// в роли ключа выступает код символа, в роли значения - число (его частота встречаемости)
+			map<char, int> characterOccurrences;
+			// Пробегаем по символам строки и для каждого буквенного символа увеличиваем его частоту встречаемости
+			for (char ch : pangram)
+			{
+				if (isalpha(ch))
+				{
+					// Оператор [] контейнера map возвращает ссылку на значение для указанного ключа
+					// При отсутствии ключа предварительно добавит ключ со значением по умолчанию (в нашем случае 0)
+					++characterOccurrences[ch]; // Возращенное значение частоты встречаемости символа увеличиваем на 1
+				}
+			}
+
+			cout << "Character occurrence in \"" << pangram << "\":" << endl;
+			// Выводим информацию о частоте встречаемости каждого символа
+			for (const auto & charOcc : characterOccurrences)
+			{
+				// charOcc имеет тип pair<char, int> и содержит поля first (ключ) и second (значение)
+				cout << "\t" << charOcc.first << ": " << charOcc.second << endl;
+			}
+		}
+	}
+
+
 	// Цикл while
 	{
 		unsigned a = 714;
@@ -54,15 +98,15 @@ void main()
 		cout << "Greatest Common Denominator of " << a << " and " << b << " is ";
 		while (b != 0)
 		{
-			std::swap(a, b);
+			swap(a, b);
 			b = b % a;
 		}
-		cout << std::max(a, 1u) << endl;
+		cout << max(a, 1u) << endl;
 	}
 
 	// Цикл do-while
 	{
-		std::string userInput;
+		string userInput;
 		do 
 		{
 			cout << R"(Enter text or "bye" to finish: )";
@@ -73,19 +117,10 @@ void main()
 
 	// Бесконечный цикл for
 	{
-		std::mt19937 generator;
-		std::uniform_int_distribution<int> dist(0, 10);
-
-		// Также можно использовать цикл while:
-		//	while (true)
-		//	{
-		//		тело цикла 
-		//	}
-		// либо цикл do-while: 
-		//	do 
-		//	{
-		//		тело цикла
-		//	} while(true);
+		// Генератор псевдослучайных чисел с использованием Вихря Мерсенна (Mersenne Twister)
+		mt19937 generator;
+		// Адаптер для получения равномерно распределенных чисел в диапазоне [1; 10]
+		uniform_int_distribution<int> dist(1, 10);
 		for (;;)
 		{
 			cout << "Next random number: " << dist(generator) << endl;
@@ -97,5 +132,16 @@ void main()
 				break;
 			}
 		}
+
+		// Также можно использовать цикл while:
+		//	while (true)
+		//	{
+		//		тело цикла 
+		//	}
+		// либо цикл do-while: 
+		//	do 
+		//	{
+		//		тело цикла
+		//	} while(true);
 	}
 }
