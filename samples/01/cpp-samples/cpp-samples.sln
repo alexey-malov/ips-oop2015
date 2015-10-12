@@ -9,6 +9,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "structures", "structures\st
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "loops", "loops\loops.vcxproj", "{D266A2E9-7EE2-4B87-8B7F-3AF820AE502E}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "input-output", "input-output\input-output.vcxproj", "{FE0DE0AF-C4EC-49A0-9885-2FCEE9B42BAB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -27,6 +29,10 @@ Global
 		{D266A2E9-7EE2-4B87-8B7F-3AF820AE502E}.Debug|Win32.Build.0 = Debug|Win32
 		{D266A2E9-7EE2-4B87-8B7F-3AF820AE502E}.Release|Win32.ActiveCfg = Release|Win32
 		{D266A2E9-7EE2-4B87-8B7F-3AF820AE502E}.Release|Win32.Build.0 = Release|Win32
+		{FE0DE0AF-C4EC-49A0-9885-2FCEE9B42BAB}.Debug|Win32.ActiveCfg = Debug|Win32
+		{FE0DE0AF-C4EC-49A0-9885-2FCEE9B42BAB}.Debug|Win32.Build.0 = Debug|Win32
+		{FE0DE0AF-C4EC-49A0-9885-2FCEE9B42BAB}.Release|Win32.ActiveCfg = Release|Win32
+		{FE0DE0AF-C4EC-49A0-9885-2FCEE9B42BAB}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
