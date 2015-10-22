@@ -148,7 +148,7 @@ bool GetPngFileInfo(const wstring & fileName, PNGInfo & pngInfo)
 
 	// Преобразуем формат байт ширины и высоты из сетевого представления в используемый на компьютере
 	hdr.width = ntohl(hdr.width);
-	hdr.height = htonl(hdr.height);
+	hdr.height = ntohl(hdr.height);
 
 	if (hdr.width == 0 || hdr.height == 0)
 	{

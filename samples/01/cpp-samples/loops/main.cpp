@@ -17,6 +17,12 @@ void main()
 			cout << i << ", ";
 		}
 		cout << endl;
+
+		for (int i = 100; i >= 0; i -= 2)
+		{
+			cout << i << ", ";
+		}
+		cout << endl;
 	}
 
 	// Используем вложенный цикл for для поиска простых чисел
@@ -72,6 +78,7 @@ void main()
 			// Пробегаем по символам строки и для каждого буквенного символа увеличиваем его частоту встречаемости
 			for (char ch : pangram)
 			{
+				cout << ch;
 				if (isalpha(ch))
 				{
 					// Оператор [] контейнера map возвращает ссылку на значение для указанного ключа
@@ -82,11 +89,18 @@ void main()
 
 			cout << "Character occurrence in \"" << pangram << "\":" << endl;
 			// Выводим информацию о частоте встречаемости каждого символа
+
 			for (const auto & charOcc : characterOccurrences)
 			{
 				// charOcc имеет тип pair<char, int> и содержит поля first (ключ) и second (значение)
 				cout << "\t" << charOcc.first << ": " << charOcc.second << endl;
 			}
+
+			/*for (map<char, int>::const_iterator it = characterOccurrences.begin(); it != characterOccurrences.end(); ++it)
+			{
+				const auto & charOcc = *it;
+				cout << "\t" << charOcc.first << ": " << charOcc.second << endl;
+			}*/
 		}
 	}
 

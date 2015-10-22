@@ -10,7 +10,7 @@ struct Point
 
 // Структуры могут выступать в качестве параметров функций
 // Здесь передача осуществляется по константной ссылке, чтобы не создавать копию переданного аргумента
-double CalculateDistance(const Point& pt1, const Point& pt2)
+double CalculateDistance(const Point & pt1, const Point & pt2)
 {
 	return hypot(pt1.x - pt2.x, pt1.y - pt2.y);
 }

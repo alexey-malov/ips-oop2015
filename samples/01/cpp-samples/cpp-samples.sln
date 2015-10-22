@@ -11,6 +11,10 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "loops", "loops\loops.vcxpro
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "input-output", "input-output\input-output.vcxproj", "{FE0DE0AF-C4EC-49A0-9885-2FCEE9B42BAB}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "read-buffer", "read-buffer\read-buffer.vcxproj", "{00EC0EDC-D4E3-483F-B234-3842C1EC4B8B}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "numeric-string-conversion", "numeric-string-conversion\numeric-string-conversion.vcxproj", "{F0B0681B-0FAD-4966-96F7-4827F4AF3EB0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -33,6 +37,14 @@ Global
 		{FE0DE0AF-C4EC-49A0-9885-2FCEE9B42BAB}.Debug|Win32.Build.0 = Debug|Win32
 		{FE0DE0AF-C4EC-49A0-9885-2FCEE9B42BAB}.Release|Win32.ActiveCfg = Release|Win32
 		{FE0DE0AF-C4EC-49A0-9885-2FCEE9B42BAB}.Release|Win32.Build.0 = Release|Win32
+		{00EC0EDC-D4E3-483F-B234-3842C1EC4B8B}.Debug|Win32.ActiveCfg = Debug|Win32
+		{00EC0EDC-D4E3-483F-B234-3842C1EC4B8B}.Debug|Win32.Build.0 = Debug|Win32
+		{00EC0EDC-D4E3-483F-B234-3842C1EC4B8B}.Release|Win32.ActiveCfg = Release|Win32
+		{00EC0EDC-D4E3-483F-B234-3842C1EC4B8B}.Release|Win32.Build.0 = Release|Win32
+		{F0B0681B-0FAD-4966-96F7-4827F4AF3EB0}.Debug|Win32.ActiveCfg = Debug|Win32
+		{F0B0681B-0FAD-4966-96F7-4827F4AF3EB0}.Debug|Win32.Build.0 = Debug|Win32
+		{F0B0681B-0FAD-4966-96F7-4827F4AF3EB0}.Release|Win32.ActiveCfg = Release|Win32
+		{F0B0681B-0FAD-4966-96F7-4827F4AF3EB0}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

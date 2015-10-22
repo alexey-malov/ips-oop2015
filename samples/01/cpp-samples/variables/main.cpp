@@ -1,7 +1,8 @@
 ﻿#include <math.h>
 #include <string>
-#include <assert.h>
+#include <assert.h> // или <cassert>
 #include "variables.h"
+#include <iostream>
 
 /*
  Объявление переменных в C++
@@ -9,13 +10,15 @@
 
 int GetNextCounter();
 
-// Переменная, объявленная вне функциидджжъзшлжгж.зш гзшдз8 ш86797шг прр 6м пае является глобальной. Ее область видимости - вся программа
+// Переменная, объявленная вне функции является глобальной. Ее область видимости - вся программа
 int someGlobalVariable = 38;
 // По умолчанию глобальные переменные инициализируются нулями
 int someZeroInitializedGlobaleVariable;
 
 // Статическая глобальная переменная. Ее область видимости - текущий .cpp файл
 static int staticVariable = 42;
+
+int GetRandomNumber();
 
 int main()
 {
@@ -113,8 +116,36 @@ int main()
 		assert(counter == 3);
 	}
 
-	
+	std::cout << GetRandomNumber() << std::endl;
+	std::cout << GetRandomNumber() << std::endl;
+	std::cout << GetRandomNumber() << std::endl;
+	std::cout << GetRandomNumber() << std::endl;
+
+	// В военное время значение числа Пи может достигать четырех
+	{
+		const double PI = 3.14159265;
+
+		const_cast<double&>(PI) = 4;
+
+		std::cout << "Now pi is " << PI << std::endl;
+	}
+
+	int moonPhase = GetRandomNumber();
+	enum class State
+	{
+		Ok,
+		Wounded,
+		Dead,
+	};
+
 	return 0;
+}
+
+int GetRandomNumber()
+{
+	static int seed = 0;
+	seed = (seed * 17 + 13) % 100;
+	return seed;
 }
 
 int GetNextCounter()
