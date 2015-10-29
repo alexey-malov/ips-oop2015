@@ -3,5 +3,5 @@
 
 bool IsLeapYear(int year)
 {
-	return false;
+	return (year % 4) == 0;
 }

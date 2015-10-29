@@ -1,8 +1,20 @@
-#include "stdafx.h"
+﻿#include "stdafx.h"
 #include "Utils.h"
 
 
-BOOST_AUTO_TEST_CASE(two_by_two_is_four)
-{
-	BOOST_CHECK_EQUAL(2 * 2, 4);
-}
+/*
+Год високосный
+	если он делится на 4
+	если при этом он не делится на 100
+	но делится на 400
+*/
+
+BOOST_AUTO_TEST_SUITE(Leap_year)
+	BOOST_AUTO_TEST_CASE(is_divisible_by_4)
+	{
+		BOOST_CHECK(IsLeapYear(2004));
+		BOOST_CHECK(!IsLeapYear(2005));
+		BOOST_CHECK(!IsLeapYear(2006));
+		BOOST_CHECK(!IsLeapYear(2007));
+	}
+BOOST_AUTO_TEST_SUITE_END()
