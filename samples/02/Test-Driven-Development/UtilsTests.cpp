@@ -17,4 +17,8 @@ BOOST_AUTO_TEST_SUITE(Leap_year)
 		BOOST_CHECK(!IsLeapYear(2006));
 		BOOST_CHECK(!IsLeapYear(2007));
 	}
+	BOOST_AUTO_TEST_CASE(if_it_is_not_divisible_by_100)
+	{
+		BOOST_CHECK(!IsLeapYear(1900));
+	}
 BOOST_AUTO_TEST_SUITE_END()
