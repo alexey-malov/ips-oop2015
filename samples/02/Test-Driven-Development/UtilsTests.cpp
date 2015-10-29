@@ -21,4 +21,8 @@ BOOST_AUTO_TEST_SUITE(Leap_year)
 	{
 		BOOST_CHECK(!IsLeapYear(1900));
 	}
+	BOOST_AUTO_TEST_CASE(is_divisible_by_400)
+	{
+		BOOST_CHECK(IsLeapYear(2000));
+	}
 BOOST_AUTO_TEST_SUITE_END()
