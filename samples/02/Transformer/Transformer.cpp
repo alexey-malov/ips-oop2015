@@ -1,4 +1,4 @@
-// Transformer.cpp : Defines the entry point for the console application.
+п»ї// Transformer.cpp : Defines the entry point for the console application.
 //
 
 #include "stdafx.h"
@@ -84,7 +84,7 @@ int main()
 	cout << endl;
 
 	/*
-	Вышеописанный код аналогичен следующему:
+	Р’С‹С€РµРѕРїРёСЃР°РЅРЅС‹Р№ РєРѕРґ Р°РЅР°Р»РѕРіРёС‡РµРЅ СЃР»РµРґСѓСЋС‰РµРјСѓ:
 	class Transformer
 	{
 		vector<int> & cryptKey;
