@@ -11,7 +11,7 @@ void ProcessVector(std::vector<double> & numbers)
 
 	size_t numberOfPositives = 0;
 
-	// безымянаня функция, суммирующая только положительные числа и ведущая их подсчет
+	// функция, суммирующая только положительные числа с подсчетом их количества
 	auto addIfPositive = [&numberOfPositives](double acc, double current) {
 		if (current > 0.0)
 		{
