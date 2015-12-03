@@ -63,6 +63,26 @@ BOOST_FIXTURE_TEST_SUITE(TVSet, TVSetFixture)
 
 			BOOST_CHECK(!tv.SelectChannel(100));
 			BOOST_CHECK_EQUAL(tv.GetChannel(), 99);
+		}	
+	BOOST_AUTO_TEST_SUITE_END()
+
+	struct after_subsequent_turning_on_ : when_turned_on_
+	{
+		after_subsequent_turning_on_()
+		{
+			tv.SelectChannel(33);
+			tv.TurnOff();
+			tv.TurnOn();
+		}
+	};
+
+	// после повторного включения
+	BOOST_FIXTURE_TEST_SUITE(after_subsequent_turning_on, after_subsequent_turning_on_)
+		// восстанавливает последний выбранный канал
+		BOOST_AUTO_TEST_CASE(restores_last_selected_channel)
+		{
+			BOOST_CHECK_EQUAL(tv.GetChannel(), 33);
 		}
 	BOOST_AUTO_TEST_SUITE_END()
+
 BOOST_AUTO_TEST_SUITE_END()
