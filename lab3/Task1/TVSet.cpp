@@ -13,5 +13,9 @@ void CTVSet::TurnOn()
 
 int CTVSet::GetChannel()const
 {
+	if (m_isOn)
+	{
+		return 1;
+	}
 	return 0;
 }
