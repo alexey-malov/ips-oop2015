@@ -43,11 +43,26 @@ BOOST_FIXTURE_TEST_SUITE(TVSet, TVSetFixture)
 		{
 			BOOST_CHECK_EQUAL(tv.GetChannel(), 1);
 		}
-		// можно выключить телевизор
+		// можно выключить
 		BOOST_AUTO_TEST_CASE(can_be_turned_off)
 		{
 			tv.TurnOff();
 			BOOST_CHECK(!tv.IsTurnedOn());
+		}
+		// позволяет выбрать канал от 1 до 99
+		BOOST_AUTO_TEST_CASE(can_select_channel_from_1_to_99)
+		{
+			BOOST_CHECK(tv.SelectChannel(1));
+			BOOST_CHECK_EQUAL(tv.GetChannel(), 1);
+
+			BOOST_CHECK(!tv.SelectChannel(0));
+			BOOST_CHECK_EQUAL(tv.GetChannel(), 1);
+
+			BOOST_CHECK(tv.SelectChannel(99));
+			BOOST_CHECK_EQUAL(tv.GetChannel(), 99);
+
+			BOOST_CHECK(!tv.SelectChannel(100));
+			BOOST_CHECK_EQUAL(tv.GetChannel(), 99);
 		}
 	BOOST_AUTO_TEST_SUITE_END()
 BOOST_AUTO_TEST_SUITE_END()
