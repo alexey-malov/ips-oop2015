@@ -17,6 +17,13 @@ BOOST_FIXTURE_TEST_SUITE(TVSet, TVSetFixture)
 	{
 		BOOST_CHECK(!tv.IsTurnedOn());
 	}
+	// не может переключать канал в выключенном состоянии
+	BOOST_AUTO_TEST_CASE(cant_select_channel_when_turned_off)
+	{
+		BOOST_CHECK(!tv.SelectChannel(87));
+		BOOST_CHECK_EQUAL(tv.GetChannel(), 0);
+	}
+
 	// может быть включен
 	BOOST_AUTO_TEST_CASE(can_be_turned_on)
 	{

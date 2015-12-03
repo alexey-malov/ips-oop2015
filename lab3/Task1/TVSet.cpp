@@ -23,10 +23,11 @@ int CTVSet::GetChannel()const
 
 bool CTVSet::SelectChannel(int channel)
 {
-	if (channel < 1 || channel > 99)
+	bool isAvailableChannel = (channel >= 1) && (channel <= 99);
+	if (isAvailableChannel && m_isOn)
 	{
-		return false;
+		m_selectedChannel = channel;
+		return true;
 	}
-	m_selectedChannel = channel;
-	return true;
+	return false;
 }
