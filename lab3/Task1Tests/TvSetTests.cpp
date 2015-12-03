@@ -43,5 +43,11 @@ BOOST_FIXTURE_TEST_SUITE(TVSet, TVSetFixture)
 		{
 			BOOST_CHECK_EQUAL(tv.GetChannel(), 1);
 		}
+		// можно выключить телевизор
+		BOOST_AUTO_TEST_CASE(can_be_turned_off)
+		{
+			tv.TurnOff();
+			BOOST_CHECK(!tv.IsTurnedOn());
+		}
 	BOOST_AUTO_TEST_SUITE_END()
 BOOST_AUTO_TEST_SUITE_END()
