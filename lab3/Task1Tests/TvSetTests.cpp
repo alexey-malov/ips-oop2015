@@ -17,4 +17,10 @@ BOOST_FIXTURE_TEST_SUITE(TVSet, TVSetFixture)
 	{
 		BOOST_CHECK(!tv.IsTurnedOn());
 	}
+	// может быть включен
+	BOOST_AUTO_TEST_CASE(can_be_turned_on)
+	{
+		tv.TurnOn();
+		BOOST_CHECK(tv.IsTurnedOn());
+	}
 BOOST_AUTO_TEST_SUITE_END()

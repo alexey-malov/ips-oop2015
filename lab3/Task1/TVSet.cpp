@@ -3,5 +3,10 @@
 
 bool CTVSet::IsTurnedOn()const
 {
-	return false;
+	return m_isOn;
+}
+
+void CTVSet::TurnOn()
+{
+	m_isOn = true;
 }
