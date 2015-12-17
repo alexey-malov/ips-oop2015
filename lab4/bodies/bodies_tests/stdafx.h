@@ -9,6 +9,9 @@
 
 #include <stdio.h>
 #include <tchar.h>
+#define _USE_MATH_DEFINES
+#include <math.h>
+#include <iomanip>
 
 #include <boost/algorithm/string/replace.hpp>
 

@@ -1,8 +1,5 @@
-#define _USE_MATH_DEFINES
-
 #pragma once
 #include "Body.h"
-#include <math.h>
 
 class CSphere final :
 	public CBody
@@ -12,6 +9,7 @@ public:
 
 	double GetRadius() const;
 	double GetVolume() const override;
+	std::string ToString() const override;
 
 private:
 	double m_radius;	
