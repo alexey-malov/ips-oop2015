@@ -26,6 +26,6 @@ BOOST_FIXTURE_TEST_SUITE(Sphere, Sphere_)
 	// имеет плотность
 	BOOST_AUTO_TEST_CASE(has_a_density)
 	{
-		BOOST_CHECK_EQUAL(sphere.GetDensity(), expectedDensity);
+		BOOST_CHECK_EQUAL(static_cast<const CBody &>(sphere).GetDensity(), expectedDensity);
 	}
 BOOST_AUTO_TEST_SUITE_END()
