@@ -31,8 +31,3 @@ std::string CBody::ToString()const
 	AppendProperties(strm);
 	return strm.str();
 }
-
-void CBody::AppendProperties(std::ostream & strm) const
-{
-	strm;
-}

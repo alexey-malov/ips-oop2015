@@ -19,6 +19,5 @@ double CSphere::GetVolume()const
 
 void CSphere::AppendProperties(std::ostream & strm) const
 {
-	CBody::AppendProperties(strm);
 	strm << "\tradius = " << GetRadius() << std::endl;
 }
