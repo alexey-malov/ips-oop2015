@@ -5,6 +5,7 @@ public:
 	CBody(double density);
 	
 	double GetDensity() const;
+	virtual double GetVolume() const = 0;
 
 	virtual ~CBody();
 
