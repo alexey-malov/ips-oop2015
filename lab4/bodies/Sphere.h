@@ -1,10 +1,14 @@
 #pragma once
 #include "Body.h"
 
-class CSphere :
+class CSphere final :
 	public CBody
 {
 public:
-	CSphere();
+	CSphere(double radius);
+
+	double GetRadius() const;
+private:
+	double m_radius;
 };
 
