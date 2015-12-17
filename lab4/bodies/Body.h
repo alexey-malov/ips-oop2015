@@ -2,7 +2,13 @@
 class CBody
 {
 public:
-	CBody();
+	CBody(double density);
+	
+	double GetDensity() const;
+
 	virtual ~CBody();
+
+private:
+	double m_density;
 };
 
