@@ -16,3 +16,8 @@ double CBody::GetDensity()const
 {
 	return m_density;
 }
+
+double CBody::GetMass()const
+{
+	return GetVolume() * GetDensity();
+}

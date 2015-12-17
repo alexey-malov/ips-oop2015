@@ -9,7 +9,7 @@ struct Sphere_
 {
 	const double expectedRadius = 42.8;
 	const double expectedDensity = 8.8;
-
+	const double expectedVolume = 328412.68;
 	const CSphere sphere;
 	Sphere_()
 		: sphere(expectedDensity, expectedRadius)
@@ -20,7 +20,7 @@ BOOST_FIXTURE_TEST_SUITE(Sphere, Sphere_)
 	// является объемным телом
 	BOOST_AUTO_TEST_CASE(is_a_body)
 	{
-		BOOST_CHECK_NO_THROW(dynamic_cast<const CBody&>(sphere));
+		BOOST_CHECK(static_cast<const CBody*>(&sphere));
 	}
 	// имеет радиус
 	BOOST_AUTO_TEST_CASE(has_a_radius)
@@ -35,6 +35,11 @@ BOOST_FIXTURE_TEST_SUITE(Sphere, Sphere_)
 	// имеет объем
 	BOOST_AUTO_TEST_CASE(has_a_volume)
 	{		
-		BOOST_CHECK_CLOSE_FRACTION(static_cast<const CBody &>(sphere).GetVolume(), 328412.68, 1e-7);
+		BOOST_CHECK_CLOSE_FRACTION(static_cast<const CBody &>(sphere).GetVolume(), expectedVolume, 1e-7);
+	}
+	// имеет массу
+	BOOST_AUTO_TEST_CASE(has_a_mass)
+	{
+		BOOST_CHECK_CLOSE_FRACTION(static_cast<const CBody &>(sphere).GetMass(), expectedVolume * expectedDensity, 1e-7);
 	}
 BOOST_AUTO_TEST_SUITE_END()

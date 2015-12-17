@@ -6,6 +6,7 @@ public:
 	
 	double GetDensity() const;
 	virtual double GetVolume() const = 0;
+	double GetMass() const;
 
 	virtual ~CBody();
 
