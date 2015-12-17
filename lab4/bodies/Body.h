@@ -7,9 +7,13 @@ public:
 	double GetDensity() const;
 	virtual double GetVolume() const = 0;
 	double GetMass() const;
-	virtual std::string ToString() const = 0;
+	std::string ToString() const;
 
 	virtual ~CBody();
+
+protected:
+	virtual std::string GetType() const = 0;
+	virtual void AppendProperties(std::ostream & strm) const;
 
 private:
 	double m_density;

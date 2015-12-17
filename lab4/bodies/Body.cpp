@@ -7,7 +7,6 @@ CBody::CBody(double density)
 {
 }
 
-
 CBody::~CBody()
 {
 }
@@ -20,4 +19,20 @@ double CBody::GetDensity()const
 double CBody::GetMass()const
 {
 	return GetVolume() * GetDensity();
+}
+
+std::string CBody::ToString()const
+{
+	std::ostringstream strm;
+	strm << GetType() << ":" << std::endl << std::setprecision(10)
+		<< "\tdensity = " << GetDensity() << std::endl
+		<< "\tvolume = " << GetVolume() << std::endl
+		<< "\tmass = " << GetMass() << std::endl;
+	AppendProperties(strm);
+	return strm.str();
+}
+
+void CBody::AppendProperties(std::ostream & strm) const
+{
+	strm;
 }

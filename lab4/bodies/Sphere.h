@@ -9,7 +9,10 @@ public:
 
 	double GetRadius() const;
 	double GetVolume() const override;
-	std::string ToString() const override;
+
+protected:
+	std::string GetType() const override;
+	void AppendProperties(std::ostream & strm) const override;
 
 private:
 	double m_radius;	

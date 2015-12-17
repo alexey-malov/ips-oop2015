@@ -18,13 +18,13 @@ double CSphere::GetVolume()const
 	return (pow(m_radius, 3) * M_PI) * 4 / 3;
 }
 
-std::string CSphere::ToString()const
+std::string CSphere::GetType()const
 {
-	std::ostringstream strm;
-	strm << "Sphere:" << std::endl << std::setprecision(10)
-		<< "\tdensity = " << GetDensity() << std::endl
-		<< "\tvolume = " << GetVolume() << std::endl
-		<< "\tmass = " << GetMass() << std::endl
-		<< "\tradius = " << GetRadius() << std::endl;
-	return strm.str();
+	return "Sphere";
+}
+
+void CSphere::AppendProperties(std::ostream & strm) const
+{
+	CBody::AppendProperties(strm);
+	strm << "\tradius = " << GetRadius() << std::endl;
 }
