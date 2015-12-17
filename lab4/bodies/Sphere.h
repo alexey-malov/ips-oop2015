@@ -11,7 +11,7 @@ public:
 	CSphere(double density, double radius);
 
 	double GetRadius() const;
-	virtual double GetVolume() const;
+	double GetVolume() const override;
 
 private:
 	double m_radius;	
