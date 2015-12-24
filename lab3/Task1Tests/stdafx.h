@@ -17,6 +17,8 @@
 #include <boost/test/unit_test.hpp>
 
 #include <iostream>
-
+#include <sstream>
+#include <functional>
+#include <map>
 
 // TODO: reference additional headers your program requires here
