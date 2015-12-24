@@ -33,6 +33,16 @@ BOOST_FIXTURE_TEST_SUITE(Remote_Control, RemoteControlFixture)
 		BOOST_CHECK(tv.IsTurnedOn());
 		BOOST_CHECK(input.eof());
 		BOOST_CHECK_EQUAL(output.str(), "TV is turned on\n");
-}
+	}
+
+	BOOST_AUTO_TEST_CASE(can_turn_off_tv_which_is_on)
+	{
+		tv.TurnOn();
+		input << "TurnOff";
+		BOOST_CHECK(remoteControl.HandleCommand());
+		BOOST_CHECK(!tv.IsTurnedOn());
+		BOOST_CHECK(input.eof());
+		BOOST_CHECK_EQUAL(output.str(), "TV is turned off\n");
+	}
 
 BOOST_AUTO_TEST_SUITE_END()

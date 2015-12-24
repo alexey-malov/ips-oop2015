@@ -15,7 +15,16 @@ bool CRemoteControl::HandleCommand()
 {
 	string command;
 	getline(m_input, command);
-	m_tv.TurnOn();
-	m_output << "TV is turned on" << endl;
+	if (command == "TurnOn")
+	{
+		m_tv.TurnOn();
+		m_output << "TV is turned on" << endl;
+	}
+	else if (command == "TurnOff")
+	{
+		m_tv.TurnOff();
+		m_output << "TV is turned off" << endl;
+	}
+	
 	return true;
 }

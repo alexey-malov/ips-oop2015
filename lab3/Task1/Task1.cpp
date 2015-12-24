@@ -2,10 +2,24 @@
 //
 
 #include "stdafx.h"
+#include "RemoteControl.h"
+#include "TVSet.h"
 
 
-int _tmain(int argc, _TCHAR* argv[])
+using namespace std;
+
+void main()
 {
-	return 0;
+	CTVSet tv;
+	CRemoteControl remoteControl(tv, cin, cout);
+
+	while (!cin.eof() && ! cin.fail())
+	{
+		cout << "> ";
+		if (!remoteControl.HandleCommand())
+		{
+			cout << "Unknown command!" << endl;
+		}
+	}
 }
 
