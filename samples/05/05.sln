@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "mysqrt", "mysqrt\mysqrt.vcxproj", "{E63583AF-887F-43E7-802C-C99A6806AF42}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "slicing", "slicing\slicing.vcxproj", "{EE208A55-40C2-46C0-8831-5A8FEFF462BB}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "rethrow", "rethrow\rethrow.vcxproj", "{F5FDDB3E-8EDE-43FA-8D64-E24928501D48}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "stack_unwinding", "stack_unwinding\stack_unwinding.vcxproj", "{AC609281-464F-4FF5-8330-2F1EA950D428}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "throw_in_destructor", "throw_in_destructor\throw_in_destructor.vcxproj", "{07A372D5-52DE-45A7-AE8C-EF4BC7398B09}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E63583AF-887F-43E7-802C-C99A6806AF42}.Debug|Win32.ActiveCfg = Debug|Win32
+		{E63583AF-887F-43E7-802C-C99A6806AF42}.Debug|Win32.Build.0 = Debug|Win32
+		{E63583AF-887F-43E7-802C-C99A6806AF42}.Release|Win32.ActiveCfg = Release|Win32
+		{E63583AF-887F-43E7-802C-C99A6806AF42}.Release|Win32.Build.0 = Release|Win32
+		{EE208A55-40C2-46C0-8831-5A8FEFF462BB}.Debug|Win32.ActiveCfg = Debug|Win32
+		{EE208A55-40C2-46C0-8831-5A8FEFF462BB}.Debug|Win32.Build.0 = Debug|Win32
+		{EE208A55-40C2-46C0-8831-5A8FEFF462BB}.Release|Win32.ActiveCfg = Release|Win32
+		{EE208A55-40C2-46C0-8831-5A8FEFF462BB}.Release|Win32.Build.0 = Release|Win32
+		{F5FDDB3E-8EDE-43FA-8D64-E24928501D48}.Debug|Win32.ActiveCfg = Debug|Win32
+		{F5FDDB3E-8EDE-43FA-8D64-E24928501D48}.Debug|Win32.Build.0 = Debug|Win32
+		{F5FDDB3E-8EDE-43FA-8D64-E24928501D48}.Release|Win32.ActiveCfg = Release|Win32
+		{F5FDDB3E-8EDE-43FA-8D64-E24928501D48}.Release|Win32.Build.0 = Release|Win32
+		{AC609281-464F-4FF5-8330-2F1EA950D428}.Debug|Win32.ActiveCfg = Debug|Win32
+		{AC609281-464F-4FF5-8330-2F1EA950D428}.Debug|Win32.Build.0 = Debug|Win32
+		{AC609281-464F-4FF5-8330-2F1EA950D428}.Release|Win32.ActiveCfg = Release|Win32
+		{AC609281-464F-4FF5-8330-2F1EA950D428}.Release|Win32.Build.0 = Release|Win32
+		{07A372D5-52DE-45A7-AE8C-EF4BC7398B09}.Debug|Win32.ActiveCfg = Debug|Win32
+		{07A372D5-52DE-45A7-AE8C-EF4BC7398B09}.Debug|Win32.Build.0 = Debug|Win32
+		{07A372D5-52DE-45A7-AE8C-EF4BC7398B09}.Release|Win32.ActiveCfg = Release|Win32
+		{07A372D5-52DE-45A7-AE8C-EF4BC7398B09}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
