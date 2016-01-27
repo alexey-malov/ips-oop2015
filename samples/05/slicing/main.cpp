@@ -24,6 +24,9 @@ public:
 		std::cout << "CBase exception: "
 			<< m_message << "\n";
 	}
+
+	// В базовом классе деструктор должен быть виртуальным
+	virtual ~CBase(){}
 private:
 	std::string m_message;
 };
@@ -84,7 +87,7 @@ void main()
 	}
 
 	std::cout << "-----\n";
-	std::cout << "Slicing\n";
+	std::cout << "No slicing\n";
 	try
 	{
 		CDerived d("Hello");
