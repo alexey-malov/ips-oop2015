@@ -9,6 +9,7 @@ public:
 	double GetSide3()const;
 
 	double GetPerimeter()const;
+	double GetArea()const;
 
 private:
 	double m_side1, m_side2, m_side3;

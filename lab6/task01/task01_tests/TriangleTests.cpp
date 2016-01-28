@@ -1,5 +1,6 @@
 ﻿#include "stdafx.h"
 #include "../Triangle.h"
+#include <math.h>
 
 using namespace std;
 
@@ -57,6 +58,14 @@ void CheckPerimeter(double side1, double side2, double side3)
 	BOOST_CHECK_EQUAL(t.GetPerimeter(), side1 + side2 + side3);
 }
 
+void CheckArea(double side1, double side2, double side3)
+{
+	CTriangle const t(side1, side2, side3);
+	double p = (t.GetPerimeter() / 2);
+	double expectedArea = sqrt(p * (p - side1) * (p - side2) * (p - side3));
+	BOOST_CHECK_EQUAL(t.GetArea(), expectedArea);
+}
+
 BOOST_AUTO_TEST_SUITE(Triangle)
 	BOOST_AUTO_TEST_CASE(cannot_have_negative_sides)
 	{
@@ -110,6 +119,15 @@ BOOST_AUTO_TEST_SUITE(Triangle)
 		CheckPerimeter(1, 2, 3);
 
 		CheckPerimeter(7.25, 4.08, 9.99);
+	}
+
+	BOOST_AUTO_TEST_CASE(has_an_area)
+	{
+		const CTriangle t(3, 4, 5);
+		BOOST_CHECK_EQUAL(t.GetArea(), 6);
+		CheckArea(1, 1, 1);
+		CheckArea(1, 1, 0);
+		CheckArea(3.1, 3.2, 3.3);
 	}
 
 	struct when_created_

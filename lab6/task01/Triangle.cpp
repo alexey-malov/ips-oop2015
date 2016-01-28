@@ -4,6 +4,7 @@
 #include <string>
 #include <sstream>
 #include <boost/format.hpp>
+#include <math.h>
 
 using namespace std;
 
@@ -63,6 +64,12 @@ double CTriangle::GetSide3()const
 double CTriangle::GetPerimeter()const
 {
 	return m_side1 + m_side2 + m_side3;
+}
+
+double CTriangle::GetArea()const
+{
+	double p = GetPerimeter() / 2;
+	return sqrt(p * (p - m_side1) * (p - m_side2) * (p - m_side3));
 }
 
 void CTriangle::ValidateSideLength(
