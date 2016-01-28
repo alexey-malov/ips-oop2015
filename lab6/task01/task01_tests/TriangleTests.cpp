@@ -50,6 +50,13 @@ void TriangleExists(double side1, double side2, double side3)
 	BOOST_CHECK_EQUAL(t.GetSide3(), side3);
 }
 
+void CheckPerimeter(double side1, double side2, double side3)
+{
+	CTriangle const t(side1, side2, side3);
+	//BOOST_CHECK_CLOSE_FRACTION(t.GetPerimeter(), side1 + side2 + side3, 1e-10);
+	BOOST_CHECK_EQUAL(t.GetPerimeter(), side1 + side2 + side3);
+}
+
 BOOST_AUTO_TEST_SUITE(Triangle)
 	BOOST_AUTO_TEST_CASE(cannot_have_negative_sides)
 	{
@@ -92,6 +99,17 @@ BOOST_AUTO_TEST_SUITE(Triangle)
 		TriangleExists(2, 1, 3);
 		TriangleExists(3, 1, 2);
 		TriangleExists(3, 2, 1);
+	}
+
+	BOOST_AUTO_TEST_CASE(has_a_perimeter)
+	{
+		CheckPerimeter(3, 4, 5);
+
+		CheckPerimeter(0, 0, 0);
+		CheckPerimeter(1, 1, 2);
+		CheckPerimeter(1, 2, 3);
+
+		CheckPerimeter(7.25, 4.08, 9.99);
 	}
 
 	struct when_created_
