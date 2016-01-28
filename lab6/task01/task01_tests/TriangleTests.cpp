@@ -90,7 +90,7 @@ BOOST_AUTO_TEST_SUITE(Triangle)
 		ExpectConstructorFailure<domain_error>(1, 2, 4, "Side 3 can not be greater than sum of side 1 and side 2");
 	}
 
-	BOOST_AUTO_TEST_CASE(can_be_singular)
+	BOOST_AUTO_TEST_CASE(can_be_degerate)
 	{
 		TriangleExists(0, 0, 0);
 
