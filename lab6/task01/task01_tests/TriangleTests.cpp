@@ -58,6 +58,13 @@ BOOST_AUTO_TEST_SUITE(Triangle)
 		*/
 	}
 
+	BOOST_AUTO_TEST_CASE(cannot_have_side_greater_than_sum_of_other_sides)
+	{
+		ExpectConstructorFailure<domain_error>(4, 1, 2, "Side 1 can not be greater than sum of side 2 and side 3");
+		ExpectConstructorFailure<domain_error>(1, 4, 2, "Side 2 can not be greater than sum of side 1 and side 3");
+		ExpectConstructorFailure<domain_error>(1, 2, 4, "Side 3 can not be greater than sum of side 1 and side 2");
+	}
+
 	struct when_created_
 	{
 		CTriangle t = CTriangle(3, 4, 5);
