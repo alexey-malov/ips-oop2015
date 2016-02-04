@@ -2,18 +2,18 @@
 #include <vector>
 #include <string>
 #include <complex>
+#include <functional>
 
 using namespace std;
 
-template <typename T>
-T AccumulateVector(const vector<T> & items)
+template <typename T, typename Op = plus<T>>
+T AccumulateVector(const vector<T> & items, Op op = Op(), T acc = T())
 {
-	T sum = T();
 	for (auto & item : items)
 	{
-		sum += item;
+		acc = op(acc, item);
 	}
-	return sum;
+	return acc;
 }
 
 void main()
@@ -29,4 +29,7 @@ void main()
 	vector<complex<double>> cs = {{3.8, 0.2}, {-1.5, 3.1}};
 	auto rc = AccumulateVector(cs);// rc = 2.3+3.3i
 	cout << rc << endl;
+
+	auto m = AccumulateVector(v, multiplies<int>(), 1);
+	cout << m << endl;
 }
